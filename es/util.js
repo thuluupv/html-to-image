@@ -138,7 +138,9 @@ export function createImage(url) {
         const img = new Image();
         img.onload = () => {
             img.decode().then(() => {
-                requestAnimationFrame(() => resolve(img));
+                setTimeout(() => {
+                    requestAnimationFrame(() => resolve(img));
+                }, 5000);
             });
         };
         img.onerror = reject;
