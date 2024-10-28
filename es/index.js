@@ -44,6 +44,7 @@ export async function toPixelData(node, options = {}) {
 }
 export async function toPng(node, options = {}) {
     const canvas = await toCanvas(node, options);
+    console.log("helllo");
     return canvas.toDataURL();
 }
 export async function toJpeg(node, options = {}) {

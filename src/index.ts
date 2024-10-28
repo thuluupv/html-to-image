@@ -75,6 +75,7 @@ export async function toPng<T extends HTMLElement>(
   options: Options = {},
 ): Promise<string> {
   const canvas = await toCanvas(node, options)
+  console.log("helllo")
   return canvas.toDataURL()
 }
 
