@@ -185,9 +185,7 @@ export function createImage(url: string): Promise<HTMLImageElement> {
     const img = new Image()
     img.onload = () => {
       img.decode().then(() => {
-        setTimeout(() => {
           requestAnimationFrame(() => resolve(img));
-        }, 5000);
       })
     }
     img.onerror = reject
