@@ -184,9 +184,7 @@ export function createImage(url: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image()
     img.onload = () => {
-      setTimeout(function () {
         resolve(img);
-      }, 1000);
     };
     img.onerror = reject
     img.crossOrigin = 'anonymous'

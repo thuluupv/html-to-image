@@ -33,7 +33,7 @@ export async function toCanvas<T extends HTMLElement>(
   const svg = await toSvg(node, options)
   const img = await createImage(svg)
 
-  await new Promise(resolve => setTimeout(resolve, 1000));
+  await new Promise(resolve => setTimeout(resolve, 3000));
 
   const canvas = document.createElement('canvas')
   const context = canvas.getContext('2d')!

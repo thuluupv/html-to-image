@@ -137,9 +137,7 @@ export function createImage(url) {
     return new Promise((resolve, reject) => {
         const img = new Image();
         img.onload = () => {
-            setTimeout(function () {
-                resolve(img);
-            }, 1000);
+            resolve(img);
         };
         img.onerror = reject;
         img.crossOrigin = 'anonymous';
