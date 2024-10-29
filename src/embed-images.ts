@@ -38,6 +38,7 @@ async function embedImageNode<T extends HTMLElement | SVGImageElement>(
   clonedNode: T,
   options: Options,
 ) {
+  console.log("chạy vào embedImageNode")
   const isImageElement = isInstanceOfElement(clonedNode, HTMLImageElement)
 
   if (
@@ -47,6 +48,7 @@ async function embedImageNode<T extends HTMLElement | SVGImageElement>(
       !isDataUrl(clonedNode.href.baseVal)
     )
   ) {
+    console.log("chạy vào if embedImageNode")
     return
   }
 
@@ -90,6 +92,7 @@ export async function embedImages<T extends HTMLElement>(
   options: Options,
 ) {
   if (isInstanceOfElement(clonedNode, Element)) {
+    console.log("chạy vào embedImages")
     await embedBackground(clonedNode, options)
     await embedImageNode(clonedNode, options)
     await embedChildren(clonedNode, options)

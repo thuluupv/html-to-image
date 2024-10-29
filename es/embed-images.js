@@ -21,10 +21,12 @@ async function embedBackground(clonedNode, options) {
     }
 }
 async function embedImageNode(clonedNode, options) {
+    console.log("chạy vào embedImageNode");
     const isImageElement = isInstanceOfElement(clonedNode, HTMLImageElement);
     if (!(isImageElement && !isDataUrl(clonedNode.src)) &&
         !(isInstanceOfElement(clonedNode, SVGImageElement) &&
             !isDataUrl(clonedNode.href.baseVal))) {
+        console.log("chạy vào if embedImageNode");
         return;
     }
     const url = isImageElement ? clonedNode.src : clonedNode.href.baseVal;
@@ -56,6 +58,7 @@ async function embedChildren(clonedNode, options) {
 }
 export async function embedImages(clonedNode, options) {
     if (isInstanceOfElement(clonedNode, Element)) {
+        console.log("chạy vào embedImages");
         await embedBackground(clonedNode, options);
         await embedImageNode(clonedNode, options);
         await embedChildren(clonedNode, options);
