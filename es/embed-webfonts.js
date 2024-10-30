@@ -22,7 +22,7 @@ async function embedFonts(data, options) {
         if (!url.startsWith('https://')) {
             url = new URL(url, data.url).href;
         }
-        return fetchAsDataURL(url, options.fetchRequestInit, ({ result }) => {
+        return fetchAsDataURL(url, options.fetchFontRequestInit, ({ result }) => {
             cssText = cssText.replace(loc, `url(${result})`);
             return [loc, result];
         });

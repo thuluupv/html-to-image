@@ -6,8 +6,8 @@ import { getImageSize, getPixelRatio, createImage, canvasToBlob, nodeToDataURL, 
 export async function toSvg(node, options = {}) {
     const { width, height } = getImageSize(node, options);
     const clonedNode = (await cloneNode(node, options, true));
-    await embedWebFonts(clonedNode, options);
     await embedImages(clonedNode, options);
+    await embedWebFonts(clonedNode, options);
     applyStyle(clonedNode, options);
     const datauri = await nodeToDataURL(clonedNode, width, height);
     return datauri;
